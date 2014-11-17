@@ -8,7 +8,16 @@ class BankTest(unittest.TestCase):
     self.assertEqual({}, bank.accounts)
     self.assertEqual(len(bank.accounts), 0)
 
- 
+ def test_add_account(self):
+  	bank = Bank()
+
+  	account_1 = Account(001, 50)
+  	account_2 = Account(002, 100)
+
+  	bank.add_account(account_1)
+  	bank.add_account(account_2)
+
+  	self.assertEqual(len(bank.accounts), 2)
   
 
 if __name__ == '__main__':
