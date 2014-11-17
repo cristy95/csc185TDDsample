@@ -8,5 +8,15 @@ class Bank(object):
 		else:
 			self.accounts[account.account_number] = account.balance
 	
+	def get_account_balance(self, account_number):
+		ans = self.accounts.get(account_number)
+
+		if ans == None:
+			return "Not Found"
+		else:
+			return ans
+
+
+
 if __name__ == '__main__':
 	unittest.main()
