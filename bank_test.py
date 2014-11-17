@@ -47,6 +47,15 @@ class BankTest(unittest.TestCase):
 
   	self.assertEqual(bank.is_account_balance_enough(account_1, 25), "YES")
   	self.assertEqual(bank.withdraw_amount(account_1, 25), "OK")
+
+  def test_withdraw_without_enough_balance(self):
+  	bank = Bank()
+
+  	account_1 = Account(001, 50)
+
+  	bank.add_account(account_1)
+
+  	self.assertEqual(bank.is_account_balance_enough(account_1, 100), "NO")
   
 
 if __name__ == '__main__':
