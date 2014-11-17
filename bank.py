@@ -16,6 +16,19 @@ class Bank(object):
 		else:
 			return ans
 
+	def is_account_balance_enough(self, account, amount):
+		balance = account.balance
+
+		if balance >= amount:
+			return "YES"
+		else:
+			return "NO"
+
+	def withdraw_amount(self, account, amount):
+		balance = account.balance - amount
+		account.balance = balance
+		return "OK"
+
 
 
 if __name__ == '__main__':

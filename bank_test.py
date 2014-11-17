@@ -27,6 +27,26 @@ class BankTest(unittest.TestCase):
   	bank.add_account(account_1)
 
   	self.assertEqual(bank.get_account_balance(001), 50)
+
+  def test_get_account_balance_of_unknown(self):
+  	bank = Bank()
+
+  	account_1 = Account(001, 50)
+  	account_2 = Account(002, 100)
+
+  	bank.add_account(account_1)
+
+  	self.assertEqual(bank.get_account_balance(002), "Not Found")
+
+  def test_withdraw_with_enough_balance(self):
+  	bank = Bank()
+
+  	account_1 = Account(001, 50)
+
+  	bank.add_account(account_1)
+
+  	self.assertEqual(bank.is_account_balance_enough(account_1, 25), "YES")
+  	self.assertEqual(bank.withdraw_amount(account_1, 25), "OK")
   
 
 if __name__ == '__main__':
