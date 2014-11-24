@@ -12,4 +12,5 @@ class TestCDList(unittest.TestCase):
 		cd1 = CD("Beatles", "Unrented")
 
 		cdlist1.add_cd(cd1)
+		
 		self.assertEqual(len(cdlist1.cdlist), 1)

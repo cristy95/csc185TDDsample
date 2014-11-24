@@ -1,4 +1,4 @@
 class Checkout(object):
-	def __init__(self, customer_id, cd_id):
-		self.customer_id = customer_id
-		self.cd_id = cd_id
+	def __init__(self, customer1, cd1):
+		self.customer1 = customer1
+		self.cd1 = cd1

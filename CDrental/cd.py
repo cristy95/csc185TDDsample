@@ -3,5 +3,8 @@ class CD(object):
 		self.cd_id = cd_id
 		self.cd_status = cd_status
 
-	def is_rented(self, cd1):
-		return cd1.cd_status
+	def is_rented(self):
+		return self.cd_status
+
+	def change_status(self):
+		self.cd_status = "Rented"
