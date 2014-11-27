@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Bank App</title>
+	<title> CD Rental</title>
 </head>
 <body>
 
-<form id="customer_form">
-	<label> Account Number: </label><input name="customer_identification" type="text"/>
+<form id="rental-form">
+	<label> Customer ID: </label><input name="customer_id" type="text"/>
+	<label> CD ID: </label><input name="cd_id" type="text"/>
 	<input type="submit"/>
 </form>
+
+{% if cd_id1 %}
+Rental Contract
+<br><br>
+CD ID:	{{ cd_id1 }} <br>
+Customer ID:	{{ customer_id1 }}<br>
+Name:	{{ name }}<br>
+Date rented:	{{ date_rented }}<br>
+Due date:	{{ due_date }}<br>
+{% endif %}
 
 </body>
 </html>

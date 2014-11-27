@@ -3,4 +3,9 @@ class CD_rental(object):
 		self.checkouts = {}
 
 	def add_checkout(self, checkout):		
-		self.checkouts[checkout.customer1.customer_id] = checkout.cd1
+		self.checkouts[checkout.customer_id] = checkout
+
+	def get_checkout_record(self, checkout1):
+		self.checkouts[checkout1.customer_id] = checkout1
+		ans = self.checkouts[checkout1.customer_id]
+		return ans
