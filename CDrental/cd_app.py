@@ -1,14 +1,17 @@
 from flask import Flask, render_template, request
 from cd_rental import CD_rental 
 from checkout import Checkout
+from customer_list import Customer_list
 app = Flask(__name__)
 CD_RENTAL = CD_rental()
+customerlist = Customer_list()
 
 @app.route('/')
 def ok():
 	customer_id = request.args.get('customer_id')
+	customer_name =  customerlist.get_customer(customer_id)
 	cd_id = request.args.get('cd_id')
-	checkout1 = Checkout(customer_id, "Kringot", cd_id, "11/25/14", "11/27/14")
+	checkout1 = Checkout(customer_id, customer_name, cd_id, "11/25/14", "11/27/14")
 	CD_RENTAL.add_checkout(checkout1)
 	chec = CD_RENTAL.get_checkout_record(checkout1)
 	cd_id1 = chec.cd_id
